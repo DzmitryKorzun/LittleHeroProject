@@ -1,0 +1,1772 @@
+fileFormatVersion: 2
+guid: 0881c767a33988b4680dea3939526c3a
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: CAT_Arm_L
+  - first:
+      1: 100002
+    second: CAT_Arm_R
+  - first:
+      1: 100004
+    second: CAT_Calf_L
+  - first:
+      1: 100006
+    second: CAT_Calf_R
+  - first:
+      1: 100008
+    second: CAT_Clavicle_L
+  - first:
+      1: 100010
+    second: CAT_Clavicle_R
+  - first:
+      1: 100012
+    second: CAT_Foot_L
+  - first:
+      1: 100014
+    second: CAT_Foot_R
+  - first:
+      1: 100016
+    second: CAT_Forearm_L
+  - first:
+      1: 100018
+    second: CAT_Forearm_R
+  - first:
+      1: 100020
+    second: CAT_Hand_L
+  - first:
+      1: 100022
+    second: CAT_Hand_R
+  - first:
+      1: 100024
+    second: CAT_Head
+  - first:
+      1: 100026
+    second: CAT_Neck
+  - first:
+      1: 100028
+    second: CAT_Pelvis
+  - first:
+      1: 100030
+    second: CAT_Spine1
+  - first:
+      1: 100032
+    second: CAT_Spine2
+  - first:
+      1: 100034
+    second: CAT_Spine3
+  - first:
+      1: 100036
+    second: CAT_Tight_L
+  - first:
+      1: 100038
+    second: CAT_Tight_R
+  - first:
+      1: 100040
+    second: CATRigLLegPlatform
+  - first:
+      1: 100042
+    second: CATRigRLegPlatform
+  - first:
+      1: 100044
+    second: Character001
+  - first:
+      1: 100046
+    second: //RootNode
+  - first:
+      4: 400000
+    second: CAT_Arm_L
+  - first:
+      4: 400002
+    second: CAT_Arm_R
+  - first:
+      4: 400004
+    second: CAT_Calf_L
+  - first:
+      4: 400006
+    second: CAT_Calf_R
+  - first:
+      4: 400008
+    second: CAT_Clavicle_L
+  - first:
+      4: 400010
+    second: CAT_Clavicle_R
+  - first:
+      4: 400012
+    second: CAT_Foot_L
+  - first:
+      4: 400014
+    second: CAT_Foot_R
+  - first:
+      4: 400016
+    second: CAT_Forearm_L
+  - first:
+      4: 400018
+    second: CAT_Forearm_R
+  - first:
+      4: 400020
+    second: CAT_Hand_L
+  - first:
+      4: 400022
+    second: CAT_Hand_R
+  - first:
+      4: 400024
+    second: CAT_Head
+  - first:
+      4: 400026
+    second: CAT_Neck
+  - first:
+      4: 400028
+    second: CAT_Pelvis
+  - first:
+      4: 400030
+    second: CAT_Spine1
+  - first:
+      4: 400032
+    second: CAT_Spine2
+  - first:
+      4: 400034
+    second: CAT_Spine3
+  - first:
+      4: 400036
+    second: CAT_Tight_L
+  - first:
+      4: 400038
+    second: CAT_Tight_R
+  - first:
+      4: 400040
+    second: CATRigLLegPlatform
+  - first:
+      4: 400042
+    second: CATRigRLegPlatform
+  - first:
+      4: 400044
+    second: Character001
+  - first:
+      4: 400046
+    second: //RootNode
+  - first:
+      74: 7400000
+    second: Run
+  - first:
+      74: 7400002
+    second: Walk
+  - first:
+      74: 7400004
+    second: Idle
+  - first:
+      74: 7400006
+    second: Idle2
+  - first:
+      74: 7400008
+    second: Attack1
+  - first:
+      74: 7400010
+    second: Attack2
+  - first:
+      74: 7400012
+    second: AttackSpecial
+  - first:
+      74: 7400014
+    second: AttackShield
+  - first:
+      74: 7400016
+    second: BlockIn
+  - first:
+      74: 7400018
+    second: BlockIdle
+  - first:
+      74: 7400020
+    second: BlockOut
+  - first:
+      74: 7400022
+    second: JumpIn
+  - first:
+      74: 7400024
+    second: JumpIdle
+  - first:
+      74: 7400026
+    second: JumpOut
+  - first:
+      74: 7400028
+    second: Hit1
+  - first:
+      74: 7400030
+    second: Hit2
+  - first:
+      74: 7400032
+    second: Death
+  - first:
+      74: 7400034
+    second: Jump
+  - first:
+      74: 7400036
+    second: Block
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 25
+      lastFrame: 55
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 60
+      lastFrame: 90
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 95
+      lastFrame: 155
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 160
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 195
+      lastFrame: 225
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AttackSpecial
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 230
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AttackShield
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 265
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BlockIn
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 305
+      lastFrame: 320
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BlockIdle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 320
+      lastFrame: 350
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BlockOut
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 350
+      lastFrame: 365
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: JumpIn
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 370
+      lastFrame: 385
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: JumpIdle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 385
+      lastFrame: 415
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: JumpOut
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 415
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 435
+      lastFrame: 445
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 450
+      lastFrame: 460
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 465
+      lastFrame: 485
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 370
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Block
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 305
+      lastFrame: 365
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CAT_Pelvis
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_L/CAT_Arm_L/CAT_Forearm_L/CAT_Hand_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Clavicle_R/CAT_Arm_R/CAT_Forearm_R/CAT_Hand_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck
+        weight: 1
+      - path: CAT_Pelvis/CAT_Spine1/CAT_Spine2/CAT_Spine3/CAT_Neck/CAT_Head
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_L/CAT_Calf_L/CAT_Foot_L
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R
+        weight: 1
+      - path: CAT_Pelvis/CAT_Tight_R/CAT_Calf_R/CAT_Foot_R
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
