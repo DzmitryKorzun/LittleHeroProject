@@ -48,9 +48,9 @@ public class Sword: IWeapon
         Ray ray = new Ray(heroTransform.position, heroTransform.forward);
         Debug.DrawRay(heroTransform.position, heroTransform.forward, Color.red, 10);
 
-        if (Physics.Raycast(ray, out hit, 10f))
+        if (Physics.Raycast(ray, out hit, 10f) && hit.collider.gameObject.tag == "Enemy")
         {
-            hit.collider.gameObject.GetComponent<EnemyController>().takingDamage(damage);
+            AllEnemyController.damageTakenAgainstTheEnemy(hit.collider.gameObject.GetComponent<IOfEnemy>(), damage);
         }
     }
     

@@ -15,7 +15,7 @@ public class PersonController : MonoBehaviour
     [HideInInspector] public GameObject ultimateEffect;
     [HideInInspector] public float damage;
 
-    private int hero_Lvl;
+    private int money = 0;
     public float speed = 5f;
     public GameObject joystickControllerObj;
 
@@ -40,14 +40,17 @@ public class PersonController : MonoBehaviour
     public delegate void MoveAction();
     public event MoveAction personMove;
 
-    public delegate void TakingDamageEvent(float health);
-    public event TakingDamageEvent takingDamage;
+    public delegate void HealthChangeEvent(float health);
+    public event HealthChangeEvent healthChange;
 
     public delegate void UseOfMana(float mana);
     public event UseOfMana manaUse;
 
     public delegate void DeadEvent();
     public event DeadEvent deadEvent;
+
+
+
 
     private void Awake()
     {
@@ -66,6 +69,7 @@ public class PersonController : MonoBehaviour
         animator = GetComponent<Animator>();
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
+      //  healthChange += HealthChange;
     }
 
     void FixedUpdate()
@@ -104,7 +108,7 @@ public class PersonController : MonoBehaviour
     private void EnemyAtake()
     {
         health = Mathf.Clamp(health - 20, 0, 100);
-        takingDamage.Invoke(health);
+        healthChange.Invoke(health);
         if (health == 0)
         {
             deadEvent?.Invoke();
@@ -119,6 +123,7 @@ public class PersonController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("12345");
         if (collision.gameObject.tag == "Enemy")
         {
             InvokeRepeating("EnemyAtake", 1, 1);
@@ -133,10 +138,6 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    public void SimpleAttack()
-    {
-
-    }
     public void Attack2() //Ultimate
     {
         manaPool = Mathf.Clamp(manaPool - wasteOfManaOnUlt, 0, 100);
@@ -151,6 +152,18 @@ public class PersonController : MonoBehaviour
     {
         ultimateEffect.SetActive(false);
         CancelInvoke("UltimateAttackEffectBreaker");
+    }
+
+    static public void HealthChange(float value, bool isDamge)
+    {
+        if (isDamge)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
 }

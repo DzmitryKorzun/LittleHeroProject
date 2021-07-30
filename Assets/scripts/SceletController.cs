@@ -1,21 +1,18 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class EnemyController : MonoBehaviour
+public class SceletController : MonoBehaviour, IOfEnemy
 {
-    public static EnemyController singlton;
+    public static SceletController singlton;
     public float health = 100;
     private Vector3 myHeroPos;
     private Transform myHeroTransform;
     private Transform enemyTransform;
-    //private Animator enemyAnimator;
     public float moveSpeed = 15f;
 
     private void Awake()
     {
         singlton = this;
-
-
     }
 
     void Start()
@@ -33,16 +30,13 @@ public class EnemyController : MonoBehaviour
         enemyTransform.DOLookAt(myHeroPos, 0f);
     }
 
-
-
     private void FixedUpdate()
     {
         enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, myHeroPos, 1f * Time.deltaTime);
     }
 
-    public void takingDamage(float damage)
+    public void takeDamage(float damage)
     {
-        Vector3 vec = new Vector3(0.0f, 0.0f, 3.0f);
         enemyTransform.DOJump(enemyTransform.localPosition, 1, 1, 1f);
         health = Mathf.Clamp(health - damage, 0, 100);
         if (health == 0)
@@ -50,8 +44,4 @@ public class EnemyController : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-
-
-
-
 }
