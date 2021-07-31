@@ -11,15 +11,23 @@ public class UI_Controller : MonoBehaviour
     public Image bombWeaponImageUI;
     public Text fireballCountText;
     public Text bombCountText;
+    public Text countOfHealthBottleText;
+    public Text countOfManaBottleText;
+    public Text countOfMoneyBottleText;
     public Image selectionArrowImage;
+    public Button shopButton;
+    public GameObject shopPanel;
     private PersonController personController;
     private Transform selectionArrowImageTransformCache;
     private Vector3 swordImagePos, fireballImagePos, bombImagePos;
     private float offsetAlongThe_Y_axisFromThePicture = 120;
-    private int typeSelectedWeapon;
+    private int typeSelectedWeapon = 0;
     private WeaponController weaponController;
     IWeapon[] weapons = new IWeapon[] { new Sword(), new FireBall(), new Bomb() };
-
+    private void Awake()
+    {
+        Inventory.singltone.InventoryStateChange += updateAllInventoryText;
+    }
     void Start()
     {
         PersonController.singlton.healthChange += changeHealth;
@@ -31,15 +39,18 @@ public class UI_Controller : MonoBehaviour
         fireballImagePos = new Vector2(fireballWeaponImageUI.transform.position.x, fireballWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         bombImagePos = new Vector2(bombWeaponImageUI.transform.position.x, bombWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         weaponController = new WeaponController(PersonController.singlton.animator, PersonController.singlton.heroTransform);
+        personController.ShopApproachEvent += ChangeOfShopStatus;
 
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 5f, 100);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 12f, 100);
+
+
 
     }
 
     public void Attack1_Click()
     {
-        weaponController.TypeOfWeapon(weapons, 0);
+        weaponController.TypeOfWeapon(weapons, typeSelectedWeapon);
     }
     
     public void Attack2_Click()
@@ -59,12 +70,24 @@ public class UI_Controller : MonoBehaviour
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 5f, mana);
     }
 
+    private void ChangeOfShopStatus(bool isEntered)
+    {
+        if (isEntered)
+        {
+            shopButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            shopButton.gameObject.SetActive(false);
+            shopPanel.SetActive(false);
+        }
+    }
+
     public void swordTypeWeaponSelected()
     {
         selectionArrowImageTransformCache.position = swordImagePos;
         typeSelectedWeapon = 0;
     }
-
     public void fireballTypeWeaponSelected()
     {
         selectionArrowImageTransformCache.position = fireballImagePos;
@@ -76,6 +99,19 @@ public class UI_Controller : MonoBehaviour
         selectionArrowImageTransformCache.position = bombImagePos;
         typeSelectedWeapon = 2;
     }
+
+    public void toggleShopWindowActivity()
+    {
+        shopPanel.SetActive(!shopPanel.activeSelf);
+    }
+
+    public void updateAllInventoryText(int money, int health, int mana)
+    {
+        countOfMoneyBottleText.text = money.ToString();
+        countOfHealthBottleText.text = health.ToString();
+        countOfManaBottleText.text = mana.ToString();
+    }
+
 
 
 }

@@ -5,13 +5,8 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
-    public Button healthButtonShop;
-    public Button manaButtonShop;
-    public Text healthTextShop;
-    public Text manaTextShop;
-
-    int health—ost = 2;
-    int manaCost = 5;
+    public int health—ost = 2;
+    public int manaCost = 5;
 
     float healthRecovery = 25;
     float manaRecovery = 25;
@@ -25,12 +20,13 @@ public class ShopController : MonoBehaviour
 
     }
 
-    void BuyHealth()
+    public void BuyHealth()
     {
-
-        //PersonController.singlton.
-        //healthChange.Invoke(health);
+        Inventory.singltone.addHealthBottle(health—ost);
     }
 
-
+    public void BuyMana()
+    {
+        Inventory.singltone.addManaBottle(manaCost);
+    }
 }

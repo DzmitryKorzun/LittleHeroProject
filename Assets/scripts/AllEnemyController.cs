@@ -6,31 +6,16 @@ using UnityEngine;
 public interface IOfEnemy
 {
     void takeDamage(float damage);
+    float getTheDamageValueOfTheEnemy();
+
 }
 
 public class AllEnemyController : MonoBehaviour
 {
-    static IOfEnemy enemy;
-
     static public void damageTakenAgainstTheEnemy(IOfEnemy enemy, float damage)
     {
         enemy.takeDamage(damage);
     }
 
 
-
-
-
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -15,7 +15,7 @@ public class PersonController : MonoBehaviour
     [HideInInspector] public GameObject ultimateEffect;
     [HideInInspector] public float damage;
 
-    private int money = 0;
+
     public float speed = 5f;
     public GameObject joystickControllerObj;
 
@@ -35,6 +35,7 @@ public class PersonController : MonoBehaviour
     private Vector3 moveVector = new Vector3();
 
 
+
     private CharacterController _charController;
 
     public delegate void MoveAction();
@@ -48,6 +49,9 @@ public class PersonController : MonoBehaviour
 
     public delegate void DeadEvent();
     public event DeadEvent deadEvent;
+
+    public delegate void ShoppingTrip(bool isEntered);
+    public event ShoppingTrip ShopApproachEvent;
 
 
 
@@ -69,7 +73,6 @@ public class PersonController : MonoBehaviour
         animator = GetComponent<Animator>();
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
-      //  healthChange += HealthChange;
     }
 
     void FixedUpdate()
@@ -105,17 +108,6 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    private void EnemyAtake()
-    {
-        health = Mathf.Clamp(health - 20, 0, 100);
-        healthChange.Invoke(health);
-        if (health == 0)
-        {
-            deadEvent?.Invoke();
-            RestartGameLvl();
-        }
-    }
-
     private void RestartGameLvl()
     {
         animator.Play("Death");
@@ -123,18 +115,30 @@ public class PersonController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("12345");
+        
+
         if (collision.gameObject.tag == "Enemy")
         {
-            InvokeRepeating("EnemyAtake", 1, 1);
+            
+            StartCoroutine("DamageOverTimeCoroutine");
         }
+        if (collision.gameObject.tag == "Shop")
+        {
+            ShopApproachEvent?.Invoke(true);
+        }
+
+
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            CancelInvoke("EnemyAtake");
+            StopCoroutine("DamageOverTimeCoroutine");
+        }
+        if (collision.gameObject.tag == "Shop")
+        {
+            ShopApproachEvent?.Invoke(false);
         }
     }
 
@@ -154,16 +158,26 @@ public class PersonController : MonoBehaviour
         CancelInvoke("UltimateAttackEffectBreaker");
     }
 
-    static public void HealthChange(float value, bool isDamge)
+    public IEnumerator DamageOverTimeCoroutine()
     {
-        if (isDamge)
-        {
 
-        }
-        else
+        while (true)
         {
+            health = Mathf.Clamp(health - 20, 0, 100);
+            healthChange.Invoke(health);
+            if (health == 0)
+            {
+                deadEvent?.Invoke();
+                RestartGameLvl();
+            }
+            yield return new WaitForSeconds(1);
 
         }
     }
 
+    public void getMedicineForHealth(float numberOfAddedHealthPoints)
+    {
+        health += numberOfAddedHealthPoints;
+        healthChange.Invoke(health);
+    }
 }

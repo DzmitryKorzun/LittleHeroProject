@@ -1,14 +1,17 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class SceletController : MonoBehaviour, IOfEnemy
+public class SkeletController : MonoBehaviour, IOfEnemy
 {
-    public static SceletController singlton;
+    public static SkeletController singlton;
+    private float damage = 5;
     public float health = 100;
     private Vector3 myHeroPos;
     private Transform myHeroTransform;
     private Transform enemyTransform;
     public float moveSpeed = 15f;
+    private int killReward = 1;
+
 
     private void Awake()
     {
@@ -42,6 +45,13 @@ public class SceletController : MonoBehaviour, IOfEnemy
         if (health == 0)
         {
             this.gameObject.SetActive(false);
+
+            Inventory.singltone.addCoin(killReward);
         }
+    }
+
+    public float getTheDamageValueOfTheEnemy()
+    {
+        return damage;
     }
 }
