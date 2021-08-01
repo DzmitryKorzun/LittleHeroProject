@@ -34,7 +34,7 @@ public class PersonController : MonoBehaviour
     private Vector3 direct;
     private Vector3 moveVector = new Vector3();
 
-
+    private float damageToTheHeroFromTheEnemy;
 
     private CharacterController _charController;
 
@@ -54,8 +54,6 @@ public class PersonController : MonoBehaviour
     public event ShoppingTrip ShopApproachEvent;
 
 
-
-
     private void Awake()
     {
         singlton = this;
@@ -73,6 +71,7 @@ public class PersonController : MonoBehaviour
         animator = GetComponent<Animator>();
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
+        Inventory.singltone.usingItemsFromInventory += theEffectOfUsingInventoryItems;
     }
 
     void FixedUpdate()
@@ -110,7 +109,7 @@ public class PersonController : MonoBehaviour
 
     private void RestartGameLvl()
     {
-        animator.Play("Death");
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -119,7 +118,7 @@ public class PersonController : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            
+            damageToTheHeroFromTheEnemy = collision.gameObject.GetComponent<IOfEnemy>().getTheDamageValueOfTheEnemy();
             StartCoroutine("DamageOverTimeCoroutine");
         }
         if (collision.gameObject.tag == "Shop")
@@ -163,11 +162,12 @@ public class PersonController : MonoBehaviour
 
         while (true)
         {
-            health = Mathf.Clamp(health - 20, 0, 100);
+            health = Mathf.Clamp(health - damageToTheHeroFromTheEnemy, 0, 100);
             healthChange.Invoke(health);
             if (health == 0)
             {
                 deadEvent?.Invoke();
+                animator.Play("Death");
                 RestartGameLvl();
             }
             yield return new WaitForSeconds(1);
@@ -179,5 +179,23 @@ public class PersonController : MonoBehaviour
     {
         health += numberOfAddedHealthPoints;
         healthChange.Invoke(health);
+    }
+
+    private void theEffectOfUsingInventoryItems(int id)
+    {
+        switch (id)
+        {
+            case 0:
+
+                break;
+
+            case 1:
+
+                break;
+
+            default:
+
+                break;
+        }
     }
 }

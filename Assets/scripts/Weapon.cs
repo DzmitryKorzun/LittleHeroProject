@@ -40,7 +40,7 @@ public class WeaponController : IGetWeaponType
 
 public class Sword: IWeapon
 {
-    public static float damage = 10;
+    public static float damage = 50;
     public void fire(float damage, Animator animAtack, Transform heroTransform)
     {
         animAtack.Play("Attack1");

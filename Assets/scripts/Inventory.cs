@@ -12,6 +12,9 @@ public class Inventory : MonoBehaviour
     public delegate void ChangingInventory(int money, int health, int mana);
     public event ChangingInventory InventoryStateChange;
 
+    public delegate void UseInventory(int id);
+    public event UseInventory usingItemsFromInventory;
+
     private void Awake()
     {
         singltone = this;
@@ -47,6 +50,21 @@ public class Inventory : MonoBehaviour
             InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
         }
     }
+
+    public void useManaBottle()
+    {
+        manaBottleCount--;
+        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+        usingItemsFromInventory?.Invoke(1);
+    }
+
+    public void useHealthBottle()
+    {
+        healthBottleCount--;
+        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+        usingItemsFromInventory?.Invoke(0);
+    }
+
 
 
 

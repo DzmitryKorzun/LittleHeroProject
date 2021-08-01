@@ -44,8 +44,6 @@ public class UI_Controller : MonoBehaviour
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 5f, 100);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 12f, 100);
 
-
-
     }
 
     public void Attack1_Click()

@@ -451,6 +451,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87754991}
   m_CullTransparentMesh: 1
+--- !u!1 &112442614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112442616}
+  - component: {fileID: 112442615}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &112442615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112442614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeb3b6267048224fb6a862cafa7aff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 10
+  manaBottleCount: 0
+  healthBottleCount: 0
+--- !u!4 &112442616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112442614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 935.90796, y: 450.5357, z: 57.21598}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &143946129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,6 +662,7 @@ GameObject:
   - component: {fileID: 195684980}
   - component: {fileID: 195684982}
   - component: {fileID: 195684981}
+  - component: {fileID: 195684983}
   m_Layer: 5
   m_Name: shopPanel
   m_TagString: Untagged
@@ -683,6 +730,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195684979}
   m_CullTransparentMesh: 1
+--- !u!114 &195684983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195684979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f7a2181c877764f99aa69ae1e5ac7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "health\u0421ost": 2
+  manaCost: 5
 --- !u!1001 &196899690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1245,7 +1306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 358680570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 195684983}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &358680570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,7 +3248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refSceleton: {fileID: 5514667825963485723, guid: dae29a8a140e1564aad47ffd16eb81e2, type: 3}
-  countOfSceletons: 3
+  countOfSceletons: 6
 --- !u!1 &877397556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: fa08efbc8440dab4fbfd57e1e4eb0bbf, type: 3}
@@ -3200,8 +3273,6 @@ MonoBehaviour:
   damage: 0
   speed: 4.93
   joystickControllerObj: {fileID: 1668289335}
-  manaInventoryCount: 0
-  healthInventoryCount: 0
 --- !u!143 &877397558
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3580,7 +3651,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 927815528}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 195684983}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: BuyMana
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &927815528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4200,7 +4283,7 @@ GameObject:
   - component: {fileID: 1171793458}
   - component: {fileID: 1171793457}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextManaCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4971,7 +5054,7 @@ GameObject:
   - component: {fileID: 1402047304}
   - component: {fileID: 1402047303}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextBottleCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5949,6 +6032,9 @@ MonoBehaviour:
   bombWeaponImageUI: {fileID: 920113944}
   fireballCountText: {fileID: 1252344531}
   bombCountText: {fileID: 46390816}
+  countOfHealthBottleText: {fileID: 1402047303}
+  countOfManaBottleText: {fileID: 1171793457}
+  countOfMoneyBottleText: {fileID: 1173394116}
   selectionArrowImage: {fileID: 1503543125}
   shopButton: {fileID: 663428308}
   shopPanel: {fileID: 195684979}
@@ -21258,18 +21344,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1836000865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841517449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b62015c442b5d4aa2e61a0db5552f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1836402409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21392,7 +21466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1841614761}
   - component: {fileID: 1835409059}
-  - component: {fileID: 1836000865}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -22599,7 +22672,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -22652,7 +22725,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -31819,7 +31892,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -31872,7 +31945,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -36393,7 +36466,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -36446,7 +36519,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -40919,18 +40992,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &585333459610743006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585333459616253238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b62015c442b5d4aa2e61a0db5552f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &585333459616253236
 GameObject:
   m_ObjectHideFlags: 0
@@ -40940,7 +41001,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585333459616291092}
-  - component: {fileID: 687511178929521754}
   m_Layer: 0
   m_Name: Explosion6
   m_TagString: Untagged
@@ -40958,7 +41018,6 @@ GameObject:
   m_Component:
   - component: {fileID: 585333459616291094}
   - component: {fileID: 585333459610142748}
-  - component: {fileID: 585333459610743006}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -41127,18 +41186,6 @@ Transform:
   m_Father: {fileID: 585333459616291092}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &687511178929521754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585333459616253236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db08735561a38424182823d8d175333b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1615024256437138115
 Transform:
   m_ObjectHideFlags: 0
