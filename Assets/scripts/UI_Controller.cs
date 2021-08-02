@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class UI_Controller : MonoBehaviour
 {
-
     public Image healthImage;
     public Image manaImage;
     public Image swordWeaponImageUI;

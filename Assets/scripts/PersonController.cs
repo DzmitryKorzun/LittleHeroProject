@@ -175,22 +175,20 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    public void getMedicineForHealth(float numberOfAddedHealthPoints)
-    {
-        health += numberOfAddedHealthPoints;
-        healthChange.Invoke(health);
-    }
 
-    private void theEffectOfUsingInventoryItems(int id)
+
+    private void theEffectOfUsingInventoryItems(int id, float value)
     {
         switch (id)
         {
             case 0:
-
+                health += value;
+                healthChange.Invoke(health);
                 break;
 
             case 1:
-
+                manaPool += value;
+                manaUse?.Invoke(manaPool);
                 break;
 
             default:
