@@ -1,24 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FireBall : MonoBehaviour, IWeapon
 {
-    private Vector3 coordinatesOfTheHitPoint;
-    private bool isGotIt;
     public static float damage = 15;
-
+    public static float manaCost = 5f;
+    public static float speedFireBall = 5f;
     public void fire(Animator animAtack, Transform heroTransform)
     {
-        RaycastHit hit;
-        Ray ray = new Ray(heroTransform.position, heroTransform.forward);
-        isGotIt = Physics.Raycast(ray, out hit);
-        coordinatesOfTheHitPoint = hit.point;
 
-        if (isGotIt && hit.collider.gameObject.tag == "Enemy")
+        var projectile = PoolWeapons.singltone.getFreeFireBall();
+        projectile.transform.position = heroTransform.position;
+        projectile.SetActive(true);
+        var seq = DOTween.Sequence();
+        seq.Append(projectile.transform.DOLocalMoveZ(50, speedFireBall));
+        seq.OnComplete(killMoveAndDeactivateFireBall);
+
+        void killMoveAndDeactivateFireBall()
         {
-
-            AllEnemyController.damageTakenAgainstTheEnemy(hit.collider.gameObject.GetComponent<IOfEnemy>(), damage);
+            projectile.SetActive(false);
         }
+
+    }
+    public float getManaCostPerShot()
+    {
+        return manaCost;
     }
 }

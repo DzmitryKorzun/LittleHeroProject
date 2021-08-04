@@ -20,12 +20,15 @@ public class UI_Controller : MonoBehaviour
     private Transform selectionArrowImageTransformCache;
     private Vector3 swordImagePos, fireballImagePos, bombImagePos;
     private float offsetAlongThe_Y_axisFromThePicture = 120;
-    private int typeSelectedWeapon = 0;
+    private int typeSelectedWeapon = 1;
     private WeaponController weaponController;
-    IWeapon[] weapons = new IWeapon[] { new Sword(), new FireBall(), new Bomb() };
+    public GameObject weaponsObj;
+    private float amountOfMana;
+    IWeapon[] weapons; 
     private void Awake()
     {
         Inventory.singltone.InventoryStateChange += updateAllInventoryText;
+        weapons = new IWeapon[] { weaponsObj.GetComponent<Ultimate>(), weaponsObj.GetComponent<Sword>(), weaponsObj.GetComponent<FireBall>(), weaponsObj.GetComponent<Bomb>() };
     }
     void Start()
     {
@@ -45,14 +48,14 @@ public class UI_Controller : MonoBehaviour
 
     }
 
-    public void Attack1_Click()
+    public void Attack1_Click()  //FireButton 
     {
         weaponController.TypeOfWeapon(weapons, typeSelectedWeapon);
     }
     
-    public void Attack2_Click()
+    public void Attack2_Click() //Ultimate
     {
-        personController.Attack2();
+        weaponController.TypeOfWeapon(weapons, 0);
     }
 
     private void changeHealth(float health)
@@ -62,6 +65,7 @@ public class UI_Controller : MonoBehaviour
 
     private void changeMana(float mana)
     {
+        this.amountOfMana = mana;
         manaImage.fillAmount = mana/ 100;
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 12f, mana);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 5f, mana);
@@ -83,18 +87,18 @@ public class UI_Controller : MonoBehaviour
     public void swordTypeWeaponSelected()
     {
         selectionArrowImageTransformCache.position = swordImagePos;
-        typeSelectedWeapon = 0;
+        typeSelectedWeapon = 1;
     }
     public void fireballTypeWeaponSelected()
     {
         selectionArrowImageTransformCache.position = fireballImagePos;
-        typeSelectedWeapon = 1;
+        typeSelectedWeapon = 2;
     }
 
     public void bombTypeWeaponSelected()
     {
         selectionArrowImageTransformCache.position = bombImagePos;
-        typeSelectedWeapon = 2;
+        typeSelectedWeapon = 3;
     }
 
     public void toggleShopWindowActivity()

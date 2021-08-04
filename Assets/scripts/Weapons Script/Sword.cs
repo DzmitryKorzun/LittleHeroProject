@@ -6,6 +6,7 @@ public class Sword : MonoBehaviour, IWeapon
 {
     public static float damage = 15;
     public static float range = 5;
+    public static float manaCost = 0f;
     public void fire(Animator animAtack, Transform heroTransform)
     {
         animAtack.Play("Attack1");
@@ -14,7 +15,11 @@ public class Sword : MonoBehaviour, IWeapon
 
         if (Physics.Raycast(ray, out hit, range) && hit.collider.gameObject.tag == "Enemy")
         {
-            AllEnemyController.damageTakenAgainstTheEnemy(hit.collider.gameObject.GetComponent<IOfEnemy>(), damage);
+            hit.collider.gameObject.GetComponent<IOfEnemy>().takeDamage(damage);
         }
+    }
+    public float getManaCostPerShot()
+    {
+        return manaCost;
     }
 }

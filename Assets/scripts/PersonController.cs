@@ -12,7 +12,6 @@ public class PersonController : MonoBehaviour
     [HideInInspector] public float manaPool = 100;
     [HideInInspector] public Transform heroTransform;
     [HideInInspector] public Animator animator;
-    [HideInInspector] public GameObject ultimateEffect;
     [HideInInspector] public float damage;
 
 
@@ -27,7 +26,7 @@ public class PersonController : MonoBehaviour
     private JoystickController myJoystick;
     private Camera cam;
     private Transform camTransform;
-    private int cameraDistans = 10;
+    public int cameraDistans = 10;
 
     private float gravity = -9.8f;
     protected float wasteOfManaOnUlt = 50;
@@ -53,6 +52,9 @@ public class PersonController : MonoBehaviour
     public delegate void ShoppingTrip(bool isEntered);
     public event ShoppingTrip ShopApproachEvent;
 
+    public delegate void Boss();
+    public event Boss bossFight;
+
 
     private void Awake()
     {
@@ -63,7 +65,7 @@ public class PersonController : MonoBehaviour
 
     void Start()
     {
-        ultimateEffect.SetActive(false);
+        manaUse += useMana;
         cam = Camera.main;
         _charController = GetComponent<CharacterController>();
         myJoystick = joystickControllerObj.GetComponent<JoystickController>();
@@ -72,6 +74,7 @@ public class PersonController : MonoBehaviour
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
         Inventory.singltone.usingItemsFromInventory += theEffectOfUsingInventoryItems;
+        SkeletController.singlton.skeletDead += killCounter;
     }
 
     void FixedUpdate()
@@ -107,15 +110,23 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    private void RestartGameLvl()
+    private void useMana(float value)
     {
-
+        this.manaPool = value;
     }
+
+    private void killCounter()
+    {
+        kills++;
+        if (kills == 100)
+        {
+            bossFight?.Invoke();
+        }
+    }
+
 
     private void OnTriggerEnter(Collider collision)
     {
-        
-
         if (collision.gameObject.tag == "Enemy")
         {
             damageToTheHeroFromTheEnemy = collision.gameObject.GetComponent<IOfEnemy>().getTheDamageValueOfTheEnemy();
@@ -125,8 +136,6 @@ public class PersonController : MonoBehaviour
         {
             ShopApproachEvent?.Invoke(true);
         }
-
-
     }
 
     private void OnTriggerExit(Collider collision)
@@ -141,20 +150,9 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    public void Attack2() //Ultimate
+    public void manaUseMethod(float mana)
     {
-        manaPool = Mathf.Clamp(manaPool - wasteOfManaOnUlt, 0, 100);
-        manaUse?.Invoke(manaPool);
-        animator.Play("AttackSpecial");
-        ultimateEffect.transform.position = heroTransform.position;
-        ultimateEffect.SetActive(true);
-        InvokeRepeating("UltimateAttackEffectBreaker", 5, 5);
-    }
-
-    private void UltimateAttackEffectBreaker()
-    {
-        ultimateEffect.SetActive(false);
-        CancelInvoke("UltimateAttackEffectBreaker");
+        manaUse?.Invoke(mana);
     }
 
     public IEnumerator DamageOverTimeCoroutine()
@@ -164,18 +162,20 @@ public class PersonController : MonoBehaviour
         {
             health = Mathf.Clamp(health - damageToTheHeroFromTheEnemy, 0, 100);
             healthChange.Invoke(health);
-            if (health == 0)
-            {
-                deadEvent?.Invoke();
-                animator.Play("Death");
-                RestartGameLvl();
-            }
+            isDeath();
             yield return new WaitForSeconds(1);
 
         }
     }
 
-
+    private void isDeath()
+    {
+        if (health == 0)
+        {
+            deadEvent?.Invoke();
+            animator.Play("Death");
+        }
+    }
 
     private void theEffectOfUsingInventoryItems(int id, float value)
     {
@@ -196,4 +196,13 @@ public class PersonController : MonoBehaviour
                 break;
         }
     }
+
+    public void takingProjectileDamage(float value)
+    {
+        health = Mathf.Clamp(health - value, 0, 100);
+        healthChange.Invoke(health);
+        isDeath();
+    }
+
+
 }

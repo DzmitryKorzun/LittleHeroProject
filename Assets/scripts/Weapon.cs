@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IWeapon
 {
     void fire( Animator animAtack, Transform heroTransform);
+    float getManaCostPerShot();
 }
 
 public interface IGetWeaponType
@@ -17,6 +18,7 @@ public class WeaponController : IGetWeaponType
 {
     private Animator anim;
     private Transform heroTransform;
+    private float manaPool;
     public WeaponController(Animator animIn, Transform heroTrIn)
     {
         this.anim = animIn;
@@ -25,7 +27,23 @@ public class WeaponController : IGetWeaponType
 
     public void TypeOfWeapon(IWeapon[] weapon, int selectedType)
     {
-        weapon[selectedType].fire(anim, heroTransform);
+        manaPool = PersonController.singlton.manaPool;
+        float manaForShoot = weapon[selectedType].getManaCostPerShot();
+        if (manaForShoot != 0)
+        {
+            if (manaForShoot<= manaPool)
+            {
+                weapon[selectedType].fire(anim, heroTransform);
+
+                PersonController.singlton.manaUseMethod(manaPool -= manaForShoot);
+            }
+
+        }
+        else
+        {
+            weapon[selectedType].fire(anim, heroTransform);
+        }
+
     }
 }
 

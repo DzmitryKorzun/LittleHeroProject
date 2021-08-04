@@ -10,12 +10,3 @@ public interface IOfEnemy
 
 }
 
-public class AllEnemyController : MonoBehaviour
-{
-    static public void damageTakenAgainstTheEnemy(IOfEnemy enemy, float damage)
-    {
-        enemy.takeDamage(damage);
-    }
-
-
-}
