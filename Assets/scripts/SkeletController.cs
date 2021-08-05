@@ -21,8 +21,7 @@ public class SkeletController : MonoBehaviour, IOfEnemy
     private float maxHP = 100;
     private float scale = 12;
 
-    public delegate void deadSceleton();
-    public event deadSceleton skeletDead;
+
 
     private void Awake()
     {
@@ -61,7 +60,7 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         hp_Bar.fillAmount = health / maxHP;
         if (health == 0)
         {
-            skeletDead?.Invoke();
+            PersonController.singlton.killCounter();
             animator.Play("Die");
             Invoke("reloadSceleton", 1.7f);
             Inventory.singltone.addCoin(killReward);
