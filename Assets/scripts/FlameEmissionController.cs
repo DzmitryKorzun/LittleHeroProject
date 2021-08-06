@@ -8,7 +8,7 @@ public class FlameEmissionController : MonoBehaviour
     public GameObject flameEmissionObj;
 
     private int coutOfFlame = 5;
-    private BoxCollider[] collidersFlame;
+    public List<BoxCollider> collidersFlame;
     void Start()
     {
         for (int i=0; i< coutOfFlame; i++)
@@ -16,7 +16,7 @@ public class FlameEmissionController : MonoBehaviour
             flameEmissionListObj.Add(Instantiate(flameEmissionObj, this.transform));
             flameEmissionListObj[i].SetActive(false);
             InvokeRepeating("flameLogic", 0, 5);
-            collidersFlame[i] = flameEmissionListObj[i].GetComponent<BoxCollider>();
+            collidersFlame.Add(flameEmissionListObj[i].GetComponent<BoxCollider>());
         }
 
     }

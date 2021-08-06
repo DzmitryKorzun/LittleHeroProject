@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public interface IWeapon
@@ -34,7 +33,6 @@ public class WeaponController : IGetWeaponType
             if (manaForShoot<= manaPool)
             {
                 weapon[selectedType].fire(anim, heroTransform);
-
                 PersonController.singlton.manaUseMethod(manaPool -= manaForShoot);
             }
 

@@ -16,7 +16,16 @@ public class PoolWeapons : MonoBehaviour
     private GameObject returnedObject;
     private void Awake()
     {
-        singltone = this;
+        if (!singltone)
+        {
+            singltone = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(bombObj);
     }
 
 

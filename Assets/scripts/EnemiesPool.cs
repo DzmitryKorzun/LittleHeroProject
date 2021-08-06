@@ -4,9 +4,9 @@ using UnityEngine;
 public class EnemiesPool : MonoBehaviour
 {
 
-    private List<GameObject> skeletonList = new List<GameObject>();
+    public List<GameObject> skeletonList = new List<GameObject>();
     public GameObject refSceleton;
-    public int countOfSceletons = 25;
+    public int countOfSceletons = 6;
 
     void Start()
     {

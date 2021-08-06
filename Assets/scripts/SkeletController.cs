@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SkeletController : MonoBehaviour, IOfEnemy
 {
     public static SkeletController singlton;
-    private float damage = 20;
+    private float damage = 10;
     public float health = 100;
     private Vector3 myHeroPos;
     private Transform myHeroTransform;
@@ -31,6 +31,8 @@ public class SkeletController : MonoBehaviour, IOfEnemy
     void Start()
     {
         PersonController.singlton.personMove += The—oordinatesOfTheHeroHaveChanged;
+        PersonController.singlton.gameRepeat += init;
+        PersonController.singlton.bossFight += desable;
         myHeroTransform = PersonController.singlton.transform;
         myHeroPos = myHeroTransform.position;
         enemyTransform = this.transform;
@@ -67,6 +69,10 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         }
     }
 
+    private void desable()
+    {
+        this.gameObject.SetActive(false);
+    }
 
     private void reloadSceleton()
     {
@@ -80,7 +86,15 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         enemyTransform.position = RandPosController.RandObjPos();
     }
 
-
+    private void init()
+    {
+        maxHP = 100;
+        enemyTransform.DOScale(12, 0.01f);
+        health = 100;
+        damage = 10;
+        this.gameObject.SetActive(true);
+        enemyTransform.position = RandPosController.RandObjPos();
+    }
 
     public float getTheDamageValueOfTheEnemy()
     {

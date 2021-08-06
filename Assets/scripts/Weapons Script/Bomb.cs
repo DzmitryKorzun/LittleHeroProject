@@ -30,8 +30,7 @@ public class Bomb : MonoBehaviour, IWeapon
         bombExplosionEffect.transform.position = heroTransform.position;
         bombExplosionEffect.SetActive(false);
         Invoke("enableCollision", reloadTime);
-        collider.enabled = false;
-        
+        collider.enabled = false;        
     }
 
     private void enableCollision()

@@ -1,19 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class PiramidController : MonoBehaviour, IOfEnemy
 {
-    private float healthPoint = 10000f;
+    private float maxHP = 1000f;
+    private float healthPoint = 1000f;
     private PersonController person;
     private Vector3 projectileStartPosition;
     public GameObject gun;
     private Vector3 shootDirection;
     private Transform myHeroTransform;
     private Vector3 meHeroPosition;
-    public float projectileSpeed = 3f;
+    public static float projectileSpeed = 3f;
     private float projectileFiringFrequency = 1f;
+    public GameObject canvas;
+    public Image healthLine;
+    public GameObject winPanel;
+
+    public delegate void gameWinDelegate();
+    public event gameWinDelegate gameWin;
+
+
+
+    private bool isBossFight = false;
     public float getTheDamageValueOfTheEnemy()
     {
         return 1;
@@ -21,34 +31,46 @@ public class PiramidController : MonoBehaviour, IOfEnemy
 
     public void takeDamage(float damage)
     {
-        healthPoint = Mathf.Clamp(healthPoint =- damage, 0, 10000f);
+        if (isBossFight)
+        {
+            healthPoint = Mathf.Clamp(healthPoint -= damage, 0, maxHP);
+            healthLine.fillAmount = healthPoint / maxHP;
+            if (healthPoint == 0)
+            {
+                winPanel.SetActive(true);
+                gameWin?.Invoke();
+            }
+        }
     }
 
     private void Start()
     {
-        person = PersonController.singlton.GetComponent<PersonController>();
         projectileStartPosition = gun.transform.position;
         myHeroTransform = PersonController.singlton.transform;
+        PersonController.singlton.bossFight += bossModeActive;
         InvokeRepeating("Attack", 1f, projectileFiringFrequency);
+        PersonController.singlton.gameRepeat += init;
     }
 
-    private void OnTriggerEnter(Collider collider)
+    public void repeatButton_Click()
     {
-        if (collider.gameObject.tag == "Player")
-        {
-            PersonController.singlton.cameraDistans = 20;
-            projectileSpeed = 1f;
-        }
+        PersonController.singlton.init();
+        winPanel.SetActive(false);
     }
 
-    private void OnTriggerExit(Collider collider)
+    public void ExitButton_Click()
     {
-        if (collider.gameObject.tag == "Player")
-        {
-            PersonController.singlton.cameraDistans = 10;
-            projectileSpeed = 3f;
-        }
+        Application.Quit();
     }
+
+
+    private void init()
+    {
+        healthPoint = 1000;
+        isBossFight = false;
+        canvas.SetActive(false);
+    }
+
 
     private void Attack()
     {
@@ -67,7 +89,11 @@ public class PiramidController : MonoBehaviour, IOfEnemy
         }
     }
 
-
+    private void bossModeActive()
+    {
+        canvas.SetActive(true);
+        isBossFight = true;
+    }
 
    
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ultimate : MonoBehaviour, IWeapon
 {
-    private float manaCost = 50;
+    private float manaCost = 30;
     public GameObject ultimateEffect;
     private CapsuleCollider collider;
 
@@ -15,7 +15,7 @@ public class Ultimate : MonoBehaviour, IWeapon
 
     public void fire(Animator animAtack, Transform heroTransform)
     {
-        PersonController.singlton.manaUseMethod(50);
+        PersonController.singlton.manaUseMethod(manaCost);
         animAtack.Play("AttackSpecial");
         ultimateEffect.transform.position = heroTransform.position;
         ultimateEffect.SetActive(true);

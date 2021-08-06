@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory singltone;
-    public int money = 0;
+    public int money = 10;
     public int manaBottleCount = 0;
     public int healthBottleCount = 0;
 
@@ -20,12 +20,19 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        singltone = this;
+        if (!singltone)
+        {
+            singltone = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     private void Start()
     {
         InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
-
         recaveryHealth = ShopController.recoveryHealth;
         recaveryMana = ShopController.recoveryMana;
     }
@@ -38,7 +45,6 @@ public class Inventory : MonoBehaviour
 
     public void addHealthBottle(int cost)
     {
-
         if (cost <= money)
         {
             money -= cost;
@@ -78,8 +84,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-
+    public void ResetAll()
+    {
+        money = 10;
+        manaBottleCount = 0;
+        healthBottleCount = 0;
+        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+    }
 
 
 

@@ -6,6 +6,7 @@ public class ListFillerAndAddingObjectsToTheScene : MonoBehaviour
 {
     public static void fillListAndAddToScene(ref List<GameObject> newList, ref GameObject myObj, int count, Transform parent, bool isActive = true)
     {
+
         for (int i = 0; i < count; i++)
         {
             newList.Add(myObj);

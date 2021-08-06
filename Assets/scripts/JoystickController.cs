@@ -12,7 +12,15 @@ public class JoystickController : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     void Awake()
     {
-        singltone = this;
+        if (!singltone)
+        {
+            singltone = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     void Start()
     {

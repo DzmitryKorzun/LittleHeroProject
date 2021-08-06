@@ -21,8 +21,7 @@ public class PersonController : MonoBehaviour
     private Ray ray;
     private Vector3 startPos;
     public bool isMove { set; private get; }
-    private int kills;
-    private int deaths;
+    private int kills = 0;
     private JoystickController myJoystick;
     private Camera cam;
     private Transform camTransform;
@@ -30,12 +29,12 @@ public class PersonController : MonoBehaviour
     public int cameraDistans = 10;
     public bool isUltimate = false;
     private float maxHealth = 100;
-
+    private float countKillsForBossFight = 50;
     private float gravity = -9.8f;
     protected float wasteOfManaOnUlt = 50;
     private Vector3 direct;
     private Vector3 moveVector = new Vector3();
-
+    private Transform parentTransform;
     private float damageToTheHeroFromTheEnemy;
 
     private CharacterController _charController;
@@ -61,9 +60,20 @@ public class PersonController : MonoBehaviour
     public delegate void deadSceleton();
     public event deadSceleton skeletDead;
 
+    public delegate void repeatGame();
+    public event repeatGame gameRepeat;
+
     private void Awake()
     {
-        singlton = this;
+        if (!singlton)
+        {
+            singlton = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         heroTransform = this.GetComponent<Transform>();
     }
 
@@ -81,19 +91,13 @@ public class PersonController : MonoBehaviour
         camTransform = cam.GetComponent<Transform>();
         heroTransform.position = startPos;
         Inventory.singltone.usingItemsFromInventory += theEffectOfUsingInventoryItems;
+        
     }
 
     void FixedUpdate()
     {
         MovementLogic();
         if (isMove) personMove?.Invoke();
-    }
-
-    private void initAfterDeath()
-    {
-        this.health = 100f;
-        this.maxHealth = 100f;
-        this.ultimateDamage = 80f;
     }
 
     private void MovementLogic()
@@ -128,6 +132,21 @@ public class PersonController : MonoBehaviour
         this.manaPool = value;
     }
 
+    public void init()
+    {
+        Inventory.singltone.ResetAll();
+        gameRepeat?.Invoke();
+        manaPool = 100;
+        health = 100;
+        heroTransform.position = startPos;
+        maxHealth = 100;
+        kills = 0;
+        manaUse?.Invoke(100);
+        healthChange?.Invoke(100);
+        animator.Play("Idle");
+    }
+
+
     public void killCounter()
     {
         kills++;
@@ -135,9 +154,9 @@ public class PersonController : MonoBehaviour
         maxHealth += 10;
         skeletDead?.Invoke();
         StopCoroutine("DamageOverTimeCoroutine");
-        if (kills == 100)
+        if (kills >= countKillsForBossFight)
         {
-            bossFight?.Invoke();
+            bossFight.Invoke();
         }
     }
 

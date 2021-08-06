@@ -6,6 +6,10 @@ public class BombColliderController : MonoBehaviour
 {
     public float damage = 120;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void OnTriggerEnter(Collider col)
     {

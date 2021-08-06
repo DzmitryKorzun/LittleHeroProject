@@ -31,33 +31,32 @@ public class UI_Controller : MonoBehaviour
     private float amountOfMana;
     private float amountOfKills = 0;
 
-    public delegate void repeatGame();
-    public event repeatGame gameRepeat;
+
 
     IWeapon[] weapons; 
     private void Awake()
     {
+        Inventory.singltone.InventoryStateChange -= updateAllInventoryText;
         Inventory.singltone.InventoryStateChange += updateAllInventoryText;
-
         weapons = new IWeapon[] { weaponsObj.GetComponent<Ultimate>(), weaponsObj.GetComponent<Sword>(), weaponsObj.GetComponent<FireBall>(), weaponsObj.GetComponent<Bomb>() };
     }
     void Start()
     {
-        PersonController.singlton.healthChange += changeHealth;
-        PersonController.singlton.manaUse += changeMana;
         personController = PersonController.singlton;
+        personController.healthChange += changeHealth;
+        personController.manaUse += changeMana;
+        personController.skeletDead += skeletDeathCountUI;
+        personController.deadEvent += personDead;
+        personController.ShopApproachEvent += ChangeOfShopStatus;
         selectionArrowImageTransformCache = selectionArrowImage.GetComponent<Transform>();
-
         swordImagePos = new Vector2(swordWeaponImageUI.transform.position.x, swordWeaponImageUI.transform.position.y+ offsetAlongThe_Y_axisFromThePicture);
         fireballImagePos = new Vector2(fireballWeaponImageUI.transform.position.x, fireballWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         bombImagePos = new Vector2(bombWeaponImageUI.transform.position.x, bombWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         weaponController = new WeaponController(PersonController.singlton.animator, PersonController.singlton.heroTransform);
-        personController.ShopApproachEvent += ChangeOfShopStatus;
         deathPanel.SetActive(false);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 5f, 100);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 12f, 100);
-        PersonController.singlton.skeletDead += skeletDeathCountUI;
-        PersonController.singlton.deadEvent += personDead;
+
     }
 
     public void Attack1_Click()  //FireButton 
@@ -68,27 +67,26 @@ public class UI_Controller : MonoBehaviour
     private void personDead()
     {
         deathPanel.SetActive(true);
-
     }
 
     public void repeatButton_click()
     {
         deathPanel.SetActive(false);
-        gameRepeat?.Invoke();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        personController.init();
+        amountOfKills = 0;
+        countOfKills.text = $"{amountOfKills}/50";
     }
 
     public void exitButton_click()
     {
-        
+        Application.Quit();
     }
 
 
     private void skeletDeathCountUI()
     {
-        Debug.Log("Убийство");
         amountOfKills++;
-        countOfKills.text = $"{amountOfKills}/100";
+        countOfKills.text = $"{amountOfKills}/50";
     }
 
     public void Attack2_Click() //Ultimate
