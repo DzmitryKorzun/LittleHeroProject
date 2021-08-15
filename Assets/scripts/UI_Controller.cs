@@ -36,18 +36,19 @@ public class UI_Controller : MonoBehaviour
     IWeapon[] weapons; 
     private void Awake()
     {
-        Inventory.singltone.InventoryStateChange -= updateAllInventoryText;
-        Inventory.singltone.InventoryStateChange += updateAllInventoryText;
+        DontDestroyOnLoad(this.gameObject);
+        EventController.gameRepeat += unsubscribingFromAnEvent;
+        EventController.InventoryStateChange += updateAllInventoryText;
         weapons = new IWeapon[] { weaponsObj.GetComponent<Ultimate>(), weaponsObj.GetComponent<Sword>(), weaponsObj.GetComponent<FireBall>(), weaponsObj.GetComponent<Bomb>() };
     }
     void Start()
     {
+        EventController.healthChange += changeHealth;
+        EventController.manaUse += changeMana;
+        EventController.skeletDead += skeletDeathCountUI;
+        EventController.deadEvent += personDead;
+        EventController.ShopApproach += ChangeOfShopStatus;
         personController = PersonController.singlton;
-        personController.healthChange += changeHealth;
-        personController.manaUse += changeMana;
-        personController.skeletDead += skeletDeathCountUI;
-        personController.deadEvent += personDead;
-        personController.ShopApproachEvent += ChangeOfShopStatus;
         selectionArrowImageTransformCache = selectionArrowImage.GetComponent<Transform>();
         swordImagePos = new Vector2(swordWeaponImageUI.transform.position.x, swordWeaponImageUI.transform.position.y+ offsetAlongThe_Y_axisFromThePicture);
         fireballImagePos = new Vector2(fireballWeaponImageUI.transform.position.x, fireballWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
@@ -56,7 +57,6 @@ public class UI_Controller : MonoBehaviour
         deathPanel.SetActive(false);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 5f, 100);
         ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 12f, 100);
-
     }
 
     public void Attack1_Click()  //FireButton 
@@ -72,9 +72,9 @@ public class UI_Controller : MonoBehaviour
     public void repeatButton_click()
     {
         deathPanel.SetActive(false);
-        personController.init();
-        amountOfKills = 0;
-        countOfKills.text = $"{amountOfKills}/50";
+        EventController.gameRestartEvent();
+        SceneManager.LoadScene(1);
+        
     }
 
     public void exitButton_click()
@@ -149,6 +149,15 @@ public class UI_Controller : MonoBehaviour
         countOfManaBottleText.text = mana.ToString();
     }
 
-
+    private void unsubscribingFromAnEvent()
+    {
+        EventController.healthChange -= changeHealth;
+        EventController.manaUse -= changeMana;
+        EventController.skeletDead -= skeletDeathCountUI;
+        EventController.deadEvent -= personDead;
+        EventController.ShopApproach -= ChangeOfShopStatus;
+        EventController.gameRepeat -= unsubscribingFromAnEvent;
+        EventController.InventoryStateChange -= updateAllInventoryText;
+    }
 
 }

@@ -47,14 +47,13 @@ public class PiramidController : MonoBehaviour, IOfEnemy
     {
         projectileStartPosition = gun.transform.position;
         myHeroTransform = PersonController.singlton.transform;
-        PersonController.singlton.bossFight += bossModeActive;
+        EventController.bossFight += bossModeActive;
         InvokeRepeating("Attack", 1f, projectileFiringFrequency);
-        PersonController.singlton.gameRepeat += init;
     }
 
     public void repeatButton_Click()
     {
-        PersonController.singlton.init();
+
         winPanel.SetActive(false);
     }
 

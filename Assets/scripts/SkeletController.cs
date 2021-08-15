@@ -26,13 +26,15 @@ public class SkeletController : MonoBehaviour, IOfEnemy
     private void Awake()
     {
         singlton = this;
+        DontDestroyOnLoad(this.gameObject);
+        EventController.gameRepeat += unsubscribingFromAnEvent;
     }
 
     void Start()
     {
-        PersonController.singlton.personMove += The—oordinatesOfTheHeroHaveChanged;
-        PersonController.singlton.gameRepeat += init;
-        PersonController.singlton.bossFight += desable;
+        EventController.personMove += The—oordinatesOfTheHeroHaveChanged;
+        EventController.bossFight += desable;
+
         myHeroTransform = PersonController.singlton.transform;
         myHeroPos = myHeroTransform.position;
         enemyTransform = this.transform;
@@ -54,6 +56,13 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, myHeroPos, 1f * Time.deltaTime);
         HP_LineObjectTranform.position = mainCamera.WorldToScreenPoint(enemyTransform.position);
     }
+
+    private void unsubscribingFromAnEvent()
+    {
+        EventController.personMove -= The—oordinatesOfTheHeroHaveChanged;
+        EventController.bossFight -= desable;
+    }
+
 
     public void takeDamage(float damage)
     {
@@ -83,16 +92,6 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         scale += 1;
         enemyTransform.DOScale(scale, 0.1f);
         hp_Bar.fillAmount = health / maxHP;
-        enemyTransform.position = RandPosController.RandObjPos();
-    }
-
-    private void init()
-    {
-        maxHP = 100;
-        enemyTransform.DOScale(12, 0.01f);
-        health = 100;
-        damage = 10;
-        this.gameObject.SetActive(true);
         enemyTransform.position = RandPosController.RandObjPos();
     }
 

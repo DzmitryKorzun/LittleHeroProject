@@ -19,11 +19,6 @@ public class PoolWeapons : MonoBehaviour
         if (!singltone)
         {
             singltone = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
         DontDestroyOnLoad(bombObj);
     }
@@ -31,33 +26,32 @@ public class PoolWeapons : MonoBehaviour
 
     private void Start()
     {
+        EventController.gameRepeat += unsubscribingFromAnEvent;
+        init();
+    }
+    private void init()
+    {
         heroTranform = PersonController.singlton.heroTransform;
         bombObj.SetActive(false);
         bombExplosionEffect.SetActive(false);
         parentTransform = this.transform;
         initProjectiles();
         initFireBall();
-
     }
-
     private void initProjectiles()
     {
         projectileList.Add(Instantiate(projectileObg, parentTransform));
         projectileList[0].SetActive(false);
-        projectileList.Add(Instantiate(projectileObg, parentTransform));
-        projectileList[1].SetActive(false);
-        projectileList.Add(Instantiate(projectileObg, parentTransform));
-        projectileList[2].SetActive(false);
+        //projectileList.Add(Instantiate(projectileObg, parentTransform));
+        //projectileList[1].SetActive(false);
+        //projectileList.Add(Instantiate(projectileObg, parentTransform));
+        //projectileList[2].SetActive(false);
     }
 
     private void initFireBall()
     {
         fireBallList.Add(Instantiate(fireBallObj, heroTranform));
         fireBallList[0].SetActive(false);
-        fireBallList.Add(Instantiate(fireBallObj, heroTranform));
-        fireBallList[1].SetActive(false);
-        fireBallList.Add(Instantiate(fireBallObj, heroTranform));
-        fireBallList[2].SetActive(false);
     }
 
     public GameObject getFreeProjectiles()
@@ -86,10 +80,17 @@ public class PoolWeapons : MonoBehaviour
         else
         {
             returnedObject = Instantiate(fireBallObj, heroTranform);
-            projectileList.Add(returnedObject);
+            fireBallList.Add(returnedObject);
             returnedObject.SetActive(false);
             return returnedObject;
         }
+    }
+
+    private void unsubscribingFromAnEvent()
+    {
+        fireBallList.Clear();
+        EventController.gameRepeat -= unsubscribingFromAnEvent;
+
     }
 
 }

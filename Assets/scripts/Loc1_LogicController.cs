@@ -21,7 +21,7 @@ public class Loc1_LogicController : MonoBehaviour
 
     private void Awake()
     {
-        PersonController.singlton.bossFight += disableLocation;
+        EventController.bossFight += disableLocation;
     }
 
 
@@ -29,7 +29,7 @@ public class Loc1_LogicController : MonoBehaviour
     {
         ListFillerAndAddingObjectsToTheScene.fillListAndAddToScene(ref grass, ref refGrass, countOfGrass, this.transform);
         ListFillerAndAddingObjectsToTheScene.fillListAndAddToScene(ref stone, ref refStone, countOfStone, this.transform);
-        PersonController.singlton.gameRepeat += anableLocation;
+       // PersonController.singlton.gameRepeat += anableLocation;
     }
 
     private void disableLocation()

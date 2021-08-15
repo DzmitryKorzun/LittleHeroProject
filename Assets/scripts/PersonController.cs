@@ -36,52 +36,30 @@ public class PersonController : MonoBehaviour
     private Vector3 moveVector = new Vector3();
     private Transform parentTransform;
     private float damageToTheHeroFromTheEnemy;
-
+    private bool isShopEnter = false;
     private CharacterController _charController;
 
-    public delegate void MoveAction();
-    public event MoveAction personMove;
 
-    public delegate void HealthChangeEvent(float health);
-    public event HealthChangeEvent healthChange;
 
-    public delegate void UseOfMana(float mana);
-    public event UseOfMana manaUse;
-
-    public delegate void DeadEvent();
-    public event DeadEvent deadEvent;
-
-    public delegate void ShoppingTrip(bool isEntered);
-    public event ShoppingTrip ShopApproachEvent;
-
-    public delegate void Boss();
-    public event Boss bossFight;
-
-    public delegate void deadSceleton();
-    public event deadSceleton skeletDead;
-
-    public delegate void repeatGame();
-    public event repeatGame gameRepeat;
 
     private void Awake()
     {
         if (!singlton)
         {
             singlton = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this.gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
         heroTransform = this.GetComponent<Transform>();
+        EventController.gameRepeat += unsubscribingFromAnEvent;
     }
 
 
     void Start()
     {
-        startPos = new Vector3(10,0,10);
-        manaUse += useMana;
+        EventController.manaUse += useMana;
+        EventController.usingItemsFromInventory += theEffectOfUsingInventoryItems;
+        startPos = new Vector3(10, 0, 10);
         cam = Camera.main;
         _charController = GetComponent<CharacterController>();
         myJoystick = joystickControllerObj.GetComponent<JoystickController>();
@@ -90,14 +68,20 @@ public class PersonController : MonoBehaviour
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
         heroTransform.position = startPos;
-        Inventory.singltone.usingItemsFromInventory += theEffectOfUsingInventoryItems;
+
         
     }
 
     void FixedUpdate()
     {
         MovementLogic();
-        if (isMove) personMove?.Invoke();
+        if (isMove) EventController.movementEvent();
+    }
+
+    private void unsubscribingFromAnEvent()
+    {
+        EventController.manaUse -= useMana;
+        EventController.usingItemsFromInventory -= theEffectOfUsingInventoryItems;
     }
 
     private void MovementLogic()
@@ -132,19 +116,6 @@ public class PersonController : MonoBehaviour
         this.manaPool = value;
     }
 
-    public void init()
-    {
-        Inventory.singltone.ResetAll();
-        gameRepeat?.Invoke();
-        manaPool = 100;
-        health = 100;
-        heroTransform.position = startPos;
-        maxHealth = 100;
-        kills = 0;
-        manaUse?.Invoke(100);
-        healthChange?.Invoke(100);
-        animator.Play("Idle");
-    }
 
 
     public void killCounter()
@@ -152,11 +123,11 @@ public class PersonController : MonoBehaviour
         kills++;
         ultimateDamage += 5;
         maxHealth += 10;
-        skeletDead?.Invoke();
+        EventController.skeletDeadEvent();
         StopCoroutine("DamageOverTimeCoroutine");
         if (kills >= countKillsForBossFight)
         {
-            bossFight.Invoke();
+            EventController.bossFightEvent();
         }
     }
 
@@ -170,7 +141,7 @@ public class PersonController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Shop")
         {
-            ShopApproachEvent?.Invoke(true);
+            EventController.ShopApproachEvent(true);
         }
         if (collision.gameObject.tag == "Enemy" && isUltimate)
         {
@@ -186,13 +157,13 @@ public class PersonController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Shop")
         {
-            ShopApproachEvent?.Invoke(false);
+            EventController.ShopApproachEvent(false);
         }
     }
 
     public void manaUseMethod(float mana)
     {
-        manaUse?.Invoke(mana);
+        EventController.manaUseEvent(mana);
     }
 
     public IEnumerator DamageOverTimeCoroutine()
@@ -201,7 +172,7 @@ public class PersonController : MonoBehaviour
         while (true)
         {
             health = Mathf.Clamp(health - damageToTheHeroFromTheEnemy, 0, maxHealth);
-            healthChange.Invoke(health);
+            EventController.healthChangeEvent(health);
             isDeath();
             yield return new WaitForSeconds(1);
 
@@ -212,7 +183,7 @@ public class PersonController : MonoBehaviour
     {
         if (health == 0)
         {
-            deadEvent?.Invoke();
+            EventController.heroDeadEvent();
             animator.Play("Death");
         }
 
@@ -224,12 +195,12 @@ public class PersonController : MonoBehaviour
         {
             case 0:
                 health += value;
-                healthChange.Invoke(health);
+                EventController.healthChangeEvent(health);
                 break;
 
             case 1:
                 manaPool += value;
-                manaUse?.Invoke(manaPool);
+                EventController.manaUseEvent(manaPool);
                 break;
 
             default:
@@ -241,7 +212,7 @@ public class PersonController : MonoBehaviour
     public void takingProjectileDamage(float value)
     {
         health = Mathf.Clamp(health - value, 0, maxHealth);
-        healthChange.Invoke(health);
+        EventController.healthChangeEvent(health);
         isDeath();
     }
 

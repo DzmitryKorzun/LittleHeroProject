@@ -10,7 +10,6 @@ public class FireBallProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider per)
     {
-        Debug.Log(per);
         if (per.gameObject.tag == "Enemy")
         {
             per.gameObject.GetComponent<IOfEnemy>().takeDamage(damage);

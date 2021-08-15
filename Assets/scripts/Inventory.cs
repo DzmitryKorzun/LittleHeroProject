@@ -12,27 +12,19 @@ public class Inventory : MonoBehaviour
     private float recaveryHealth;
     private float recaveryMana;
 
-    public delegate void ChangingInventory(int money, int health, int mana);
-    public event ChangingInventory InventoryStateChange;
 
-    public delegate void UseInventory(int id, float value);
-    public event UseInventory usingItemsFromInventory;
 
     private void Awake()
     {
         if (!singltone)
         {
             singltone = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
+           // DontDestroyOnLoad(this);
         }
     }
     private void Start()
     {
-        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+        EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
         recaveryHealth = ShopController.recoveryHealth;
         recaveryMana = ShopController.recoveryMana;
     }
@@ -40,7 +32,7 @@ public class Inventory : MonoBehaviour
     public void addCoin(int coinsReward)
     {
         money += coinsReward;
-        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+        EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
     }
 
     public void addHealthBottle(int cost)
@@ -49,7 +41,7 @@ public class Inventory : MonoBehaviour
         {
             money -= cost;
             healthBottleCount++;
-            InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+            EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
         }
     }
 
@@ -59,7 +51,7 @@ public class Inventory : MonoBehaviour
         {
             money -= cost;
             manaBottleCount++;
-            InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+            EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
         }
     }
 
@@ -68,8 +60,8 @@ public class Inventory : MonoBehaviour
         if (manaBottleCount != 0)
         {
             manaBottleCount--;
-            InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
-            usingItemsFromInventory?.Invoke(1, recaveryMana);
+            EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
+            EventController.usingItemsFromInventoryEvent(1, recaveryMana);
         }
 
     }
@@ -79,8 +71,8 @@ public class Inventory : MonoBehaviour
         if (healthBottleCount !=0)
         {
             healthBottleCount--;
-            InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
-            usingItemsFromInventory?.Invoke(0, recaveryHealth);
+            EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
+            EventController.usingItemsFromInventoryEvent(0, recaveryHealth);
         }
     }
 
@@ -89,7 +81,7 @@ public class Inventory : MonoBehaviour
         money = 10;
         manaBottleCount = 0;
         healthBottleCount = 0;
-        InventoryStateChange?.Invoke(money, healthBottleCount, manaBottleCount);
+        EventController.InventoryStateChangeEvent(money, healthBottleCount, manaBottleCount);
     }
 
 

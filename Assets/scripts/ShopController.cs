@@ -9,8 +9,7 @@ public class ShopController : MonoBehaviour
     static public float recoveryHealth = 25;
     static public float recoveryMana = 30;
 
-    public delegate void MoneyChange();
-    public event MoneyChange MoneyEvent;
+
 
     public void BuyHealth()
     {
