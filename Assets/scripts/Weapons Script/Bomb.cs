@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour, IWeapon
 {
 
-    private float manaCost = 10;
+    public static float manaCost = 10;
     private float reloadTime = 5f;
     public GameObject bomb;
     public GameObject bombExplosionEffect;

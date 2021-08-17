@@ -4,9 +4,6 @@ using UnityEngine;
 
 public static class EventController
 {
-    public delegate void MoveAction();
-    public static event MoveAction personMove;
-
     public delegate void HealthChangeEvent(float health);
     public static event HealthChangeEvent healthChange;
 
@@ -37,10 +34,6 @@ public static class EventController
     public delegate void MoneyChange();
     public static event MoneyChange MoneyEvent;
 
-    public static void movementEvent()
-    {
-        personMove?.Invoke();
-    }
 
     public static void healthChangeEvent(float health)
     {

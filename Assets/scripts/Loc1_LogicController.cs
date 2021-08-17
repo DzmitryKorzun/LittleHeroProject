@@ -22,6 +22,7 @@ public class Loc1_LogicController : MonoBehaviour
     private void Awake()
     {
         EventController.bossFight += disableLocation;
+        EventController.gameRepeat += unsubscribingFromAnEvent;
     }
 
 
@@ -29,7 +30,6 @@ public class Loc1_LogicController : MonoBehaviour
     {
         ListFillerAndAddingObjectsToTheScene.fillListAndAddToScene(ref grass, ref refGrass, countOfGrass, this.transform);
         ListFillerAndAddingObjectsToTheScene.fillListAndAddToScene(ref stone, ref refStone, countOfStone, this.transform);
-       // PersonController.singlton.gameRepeat += anableLocation;
     }
 
     private void disableLocation()
@@ -38,10 +38,9 @@ public class Loc1_LogicController : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    private void anableLocation()
+    private void unsubscribingFromAnEvent()
     {
-        loc2.SetActive(false);
-        this.gameObject.SetActive(true);
+        EventController.bossFight -= disableLocation;
+        EventController.gameRepeat -= unsubscribingFromAnEvent;
     }
-
 }

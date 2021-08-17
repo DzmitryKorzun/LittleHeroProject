@@ -32,7 +32,6 @@ public class SkeletController : MonoBehaviour, IOfEnemy
 
     void Start()
     {
-        EventController.personMove += The—oordinatesOfTheHeroHaveChanged;
         EventController.bossFight += desable;
 
         myHeroTransform = PersonController.singlton.transform;
@@ -45,21 +44,16 @@ public class SkeletController : MonoBehaviour, IOfEnemy
         animator = GetComponent<Animator>();
     }
 
-    private void The—oordinatesOfTheHeroHaveChanged() // Called when the coordinates of the main character change
-    {
-        myHeroPos = myHeroTransform.position;
-        enemyTransform.DOLookAt(myHeroPos, 0f);
-    }
 
     private void FixedUpdate()
     {
-        enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, myHeroPos, 1f * Time.deltaTime);
+        enemyTransform.DOLookAt(myHeroTransform.position, 0f);
+        enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, myHeroTransform.position, 1f * Time.deltaTime);
         HP_LineObjectTranform.position = mainCamera.WorldToScreenPoint(enemyTransform.position);
     }
 
     private void unsubscribingFromAnEvent()
     {
-        EventController.personMove -= The—oordinatesOfTheHeroHaveChanged;
         EventController.bossFight -= desable;
     }
 

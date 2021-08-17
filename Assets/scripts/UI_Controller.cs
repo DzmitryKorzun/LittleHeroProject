@@ -24,14 +24,12 @@ public class UI_Controller : MonoBehaviour
     private PersonController personController;
     private Transform selectionArrowImageTransformCache;
     private Vector3 swordImagePos, fireballImagePos, bombImagePos;
-    private float offsetAlongThe_Y_axisFromThePicture = 120;
+    private float offsetAlongThe_Y_axisFromThePicture;
     private int typeSelectedWeapon = 1;
     private WeaponController weaponController;
     public GameObject weaponsObj;
     private float amountOfMana;
     private float amountOfKills = 0;
-
-
 
     IWeapon[] weapons; 
     private void Awake()
@@ -50,13 +48,15 @@ public class UI_Controller : MonoBehaviour
         EventController.ShopApproach += ChangeOfShopStatus;
         personController = PersonController.singlton;
         selectionArrowImageTransformCache = selectionArrowImage.GetComponent<Transform>();
+        offsetAlongThe_Y_axisFromThePicture = swordWeaponImageUI.GetComponent<RectTransform>().sizeDelta.x / 2 + 40;
+        Debug.Log(offsetAlongThe_Y_axisFromThePicture);
         swordImagePos = new Vector2(swordWeaponImageUI.transform.position.x, swordWeaponImageUI.transform.position.y+ offsetAlongThe_Y_axisFromThePicture);
         fireballImagePos = new Vector2(fireballWeaponImageUI.transform.position.x, fireballWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         bombImagePos = new Vector2(bombWeaponImageUI.transform.position.x, bombWeaponImageUI.transform.position.y + offsetAlongThe_Y_axisFromThePicture);
         weaponController = new WeaponController(PersonController.singlton.animator, PersonController.singlton.heroTransform);
         deathPanel.SetActive(false);
-        ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, 5f, 100);
-        ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, 12f, 100);
+        ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref bombCountText, Bomb.manaCost, 100);
+        ControlOfThePossibilityOfUsingTheSelectedWeapon.numberOfPossibleUses(ref fireballCountText, FireBall.manaCost, 100);
     }
 
     public void Attack1_Click()  //FireButton 

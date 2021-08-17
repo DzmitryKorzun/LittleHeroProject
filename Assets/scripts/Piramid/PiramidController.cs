@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PiramidController : MonoBehaviour, IOfEnemy
 {
@@ -17,7 +18,6 @@ public class PiramidController : MonoBehaviour, IOfEnemy
     public GameObject canvas;
     public Image healthLine;
     public GameObject winPanel;
-
     public delegate void gameWinDelegate();
     public event gameWinDelegate gameWin;
 
@@ -37,6 +37,7 @@ public class PiramidController : MonoBehaviour, IOfEnemy
             healthLine.fillAmount = healthPoint / maxHP;
             if (healthPoint == 0)
             {
+                PersonController.isVulnerable = false;
                 winPanel.SetActive(true);
                 gameWin?.Invoke();
             }
@@ -45,15 +46,17 @@ public class PiramidController : MonoBehaviour, IOfEnemy
 
     private void Start()
     {
+        EventController.gameRepeat += unsubscribingFromAnEvent;
+        EventController.bossFight += bossModeActive;
         projectileStartPosition = gun.transform.position;
         myHeroTransform = PersonController.singlton.transform;
-        EventController.bossFight += bossModeActive;
+
         InvokeRepeating("Attack", 1f, projectileFiringFrequency);
     }
 
     public void repeatButton_Click()
     {
-
+        SceneManager.LoadScene(1);
         winPanel.SetActive(false);
     }
 
@@ -61,15 +64,6 @@ public class PiramidController : MonoBehaviour, IOfEnemy
     {
         Application.Quit();
     }
-
-
-    private void init()
-    {
-        healthPoint = 1000;
-        isBossFight = false;
-        canvas.SetActive(false);
-    }
-
 
     private void Attack()
     {
@@ -94,5 +88,10 @@ public class PiramidController : MonoBehaviour, IOfEnemy
         isBossFight = true;
     }
 
-   
+   private void unsubscribingFromAnEvent()
+   {
+        projectileSpeed = 3f;
+        EventController.gameRepeat -= unsubscribingFromAnEvent;
+        EventController.bossFight -= bossModeActive;
+   }
 }

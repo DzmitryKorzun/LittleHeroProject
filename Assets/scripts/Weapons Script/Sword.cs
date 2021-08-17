@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour, IWeapon
 {
     public static float damage = 40;
-    public static float range = 5;
+    public static float range = 1;
     public static float manaCost = 0f;
     public void fire(Animator animAtack, Transform heroTransform)
     {

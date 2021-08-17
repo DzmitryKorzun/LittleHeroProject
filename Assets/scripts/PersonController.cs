@@ -38,7 +38,7 @@ public class PersonController : MonoBehaviour
     private float damageToTheHeroFromTheEnemy;
     private bool isShopEnter = false;
     private CharacterController _charController;
-
+    public static bool isVulnerable = true;
 
 
 
@@ -67,24 +67,10 @@ public class PersonController : MonoBehaviour
         animator = GetComponent<Animator>();
         ray.direction = Vector3.forward;
         camTransform = cam.GetComponent<Transform>();
-        heroTransform.position = startPos;
-
-        
+        heroTransform.position = startPos;        
     }
 
     void FixedUpdate()
-    {
-        MovementLogic();
-        if (isMove) EventController.movementEvent();
-    }
-
-    private void unsubscribingFromAnEvent()
-    {
-        EventController.manaUse -= useMana;
-        EventController.usingItemsFromInventory -= theEffectOfUsingInventoryItems;
-    }
-
-    private void MovementLogic()
     {
         moveVector = Vector3.zero;
         moveVector.x = myJoystick.Horizontal() * speed;
@@ -109,7 +95,15 @@ public class PersonController : MonoBehaviour
             camTransform.DOMove(new Vector3(heroTransform.position.x, 9, heroTransform.position.z), 1f);
             animator.SetBool("Run", false);
         }
+
     }
+
+    private void unsubscribingFromAnEvent()
+    {
+        EventController.manaUse -= useMana;
+        EventController.usingItemsFromInventory -= theEffectOfUsingInventoryItems;
+    }
+
 
     private void useMana(float value)
     {
@@ -142,6 +136,7 @@ public class PersonController : MonoBehaviour
         if (collision.gameObject.tag == "Shop")
         {
             EventController.ShopApproachEvent(true);
+            isVulnerable = false;
         }
         if (collision.gameObject.tag == "Enemy" && isUltimate)
         {
@@ -157,6 +152,7 @@ public class PersonController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Shop")
         {
+            isVulnerable = true;
             EventController.ShopApproachEvent(false);
         }
     }
@@ -168,11 +164,9 @@ public class PersonController : MonoBehaviour
 
     public IEnumerator DamageOverTimeCoroutine()
     {
-
         while (true)
         {
-            health = Mathf.Clamp(health - damageToTheHeroFromTheEnemy, 0, maxHealth);
-            EventController.healthChangeEvent(health);
+            health—hangeAfterTakingDamage(damageToTheHeroFromTheEnemy);
             isDeath();
             yield return new WaitForSeconds(1);
 
@@ -211,10 +205,17 @@ public class PersonController : MonoBehaviour
 
     public void takingProjectileDamage(float value)
     {
-        health = Mathf.Clamp(health - value, 0, maxHealth);
-        EventController.healthChangeEvent(health);
+        health—hangeAfterTakingDamage(value);
         isDeath();
     }
 
+    private void health—hangeAfterTakingDamage(float value)
+    {
+        if (isVulnerable)
+        {
+            health = Mathf.Clamp(health - value, 0, maxHealth);
+            EventController.healthChangeEvent(health);
+        }
 
+    }
 }
